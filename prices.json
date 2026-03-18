@@ -1,0 +1,1278 @@
+{
+  "updated_at": "2026-03-18T06:49:17.006Z",
+  "count": 159,
+  "data": [
+    {
+      "asset_type": "perak",
+      "brand": "lotus_archi",
+      "variant_label": "perak_lotus_archi_100gr",
+      "variant_weight": 100,
+      "sell_price": 7700000,
+      "buyback_price": 6000000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "lotus_archi",
+      "variant_label": "perak_lotus_archi_250gr",
+      "variant_weight": 250,
+      "sell_price": 19000000,
+      "buyback_price": 15000000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "lotus_archi",
+      "variant_label": "perak_lotus_archi_500gr",
+      "variant_weight": 500,
+      "sell_price": 37000000,
+      "buyback_price": 30000000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "lotus_archi",
+      "variant_label": "perak_lotus_archi_1000gr",
+      "variant_weight": 1000,
+      "sell_price": 73000000,
+      "buyback_price": 60000000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "lotus_archi",
+      "variant_label": "perak_lotus_archi_50gr",
+      "variant_weight": 50,
+      "sell_price": 3900000,
+      "buyback_price": 3000000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "ubs",
+      "variant_label": "0.1 gr",
+      "variant_weight": 0.1,
+      "sell_price": 435100,
+      "buyback_price": 272000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "ubs",
+      "variant_label": "0.25 gr",
+      "variant_weight": 0.25,
+      "sell_price": 990400,
+      "buyback_price": 682000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "ubs",
+      "variant_label": "0.5 gr",
+      "variant_weight": 0.5,
+      "sell_price": 1756500,
+      "buyback_price": 1364000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "ubs",
+      "variant_label": "1 gr",
+      "variant_weight": 1,
+      "sell_price": 3164100,
+      "buyback_price": 2728000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "ubs",
+      "variant_label": "2 gr",
+      "variant_weight": 2,
+      "sell_price": 6248600,
+      "buyback_price": 5457000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "ubs",
+      "variant_label": "3 gr",
+      "variant_weight": 3,
+      "sell_price": 9350500,
+      "buyback_price": 8185000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "ubs",
+      "variant_label": "4 gr",
+      "variant_weight": 4,
+      "sell_price": 12421900,
+      "buyback_price": 10914000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "ubs",
+      "variant_label": "5 gr",
+      "variant_weight": 5,
+      "sell_price": 15322500,
+      "buyback_price": 13642000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "ubs",
+      "variant_label": "10 gr",
+      "variant_weight": 10,
+      "sell_price": 30375900,
+      "buyback_price": 27285000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "ubs",
+      "variant_label": "25 gr",
+      "variant_weight": 25,
+      "sell_price": 75693100,
+      "buyback_price": 68214000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "ubs",
+      "variant_label": "50 gr",
+      "variant_weight": 50,
+      "sell_price": 150862900,
+      "buyback_price": 136428000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "ubs",
+      "variant_label": "100 gr",
+      "variant_weight": 100,
+      "sell_price": 301516500,
+      "buyback_price": 272857000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "silvergram",
+      "variant_label": "100 gr",
+      "variant_weight": 100,
+      "sell_price": 8614400,
+      "buyback_price": 5258500
+    },
+    {
+      "asset_type": "perak",
+      "brand": "silvergram",
+      "variant_label": "250 gr",
+      "variant_weight": 250,
+      "sell_price": 20883500,
+      "buyback_price": 13146250
+    },
+    {
+      "asset_type": "perak",
+      "brand": "silvergram",
+      "variant_label": "1 gr",
+      "variant_weight": 1,
+      "sell_price": 123400,
+      "buyback_price": 52585
+    },
+    {
+      "asset_type": "perak",
+      "brand": "silvergram",
+      "variant_label": "5 gr",
+      "variant_weight": 5,
+      "sell_price": 515000,
+      "buyback_price": 262925
+    },
+    {
+      "asset_type": "perak",
+      "brand": "silvergram",
+      "variant_label": "10 gr",
+      "variant_weight": 10,
+      "sell_price": 1027500,
+      "buyback_price": 525850
+    },
+    {
+      "asset_type": "perak",
+      "brand": "silvergram",
+      "variant_label": "25 gr",
+      "variant_weight": 25,
+      "sell_price": 2545900,
+      "buyback_price": 1314625
+    },
+    {
+      "asset_type": "perak",
+      "brand": "silvergram",
+      "variant_label": "50 gr",
+      "variant_weight": 50,
+      "sell_price": 4335800,
+      "buyback_price": 2629250
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "certieye_1g",
+      "variant_weight": 1,
+      "sell_price": 3347000,
+      "buyback_price": 2855000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "certieye_2g",
+      "variant_weight": 2,
+      "sell_price": 6594000,
+      "buyback_price": 5710000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "certieye_3g",
+      "variant_weight": 3,
+      "sell_price": 9830000,
+      "buyback_price": 8565000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "certieye_5g",
+      "variant_weight": 5,
+      "sell_price": 16135000,
+      "buyback_price": 14275000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "certieye_10g",
+      "variant_weight": 10,
+      "sell_price": 31765000,
+      "buyback_price": 28550000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "certieye_25g",
+      "variant_weight": 25,
+      "sell_price": 78162000,
+      "buyback_price": 71375000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "certieye_50g",
+      "variant_weight": 50,
+      "sell_price": 153845000,
+      "buyback_price": 142750000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "certieye_100g",
+      "variant_weight": 100,
+      "sell_price": 302612000,
+      "buyback_price": 285500000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "retro_0.5g",
+      "variant_weight": 0.5,
+      "sell_price": 1463500,
+      "buyback_price": 1357000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "retro_1g",
+      "variant_weight": 1,
+      "sell_price": 2927000,
+      "buyback_price": 2714000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "retro_2g",
+      "variant_weight": 2,
+      "sell_price": 5854000,
+      "buyback_price": 5428000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "retro_2.5g",
+      "variant_weight": 2.5,
+      "sell_price": 7317500,
+      "buyback_price": 6785000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "retro_3g",
+      "variant_weight": 3,
+      "sell_price": 8781000,
+      "buyback_price": 8142000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "retro_4g",
+      "variant_weight": 4,
+      "sell_price": 11708000,
+      "buyback_price": 10856000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "retro_5g",
+      "variant_weight": 5,
+      "sell_price": 14635000,
+      "buyback_price": 13570000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "retro_10g",
+      "variant_weight": 10,
+      "sell_price": 29270000,
+      "buyback_price": 27140000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "retro_25g",
+      "variant_weight": 25,
+      "sell_price": 73175000,
+      "buyback_price": 67850000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "retro_50g",
+      "variant_weight": 50,
+      "sell_price": 146350000,
+      "buyback_price": 135750000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "retro_100g",
+      "variant_weight": 100,
+      "sell_price": 292700000,
+      "buyback_price": 271500000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "antam",
+      "variant_label": "certieye_0.5g",
+      "variant_weight": 0.5,
+      "sell_price": 1736000,
+      "buyback_price": 1427500
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_emas",
+      "variant_label": "emas_24_karat_(999%)",
+      "variant_weight": 1,
+      "sell_price": 2776349,
+      "buyback_price": 2750125
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_emas",
+      "variant_label": "emas_23_karat_(956%)",
+      "variant_weight": 1,
+      "sell_price": 2771630,
+      "buyback_price": 2442936
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_emas",
+      "variant_label": "emas_22_karat_(916%)",
+      "variant_weight": 1,
+      "sell_price": 2654190,
+      "buyback_price": 2326606
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_emas",
+      "variant_label": "emas_21_karat_(875%)",
+      "variant_weight": 1,
+      "sell_price": 2540360,
+      "buyback_price": 2213850
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_emas",
+      "variant_label": "emas_20_karat_(830%)",
+      "variant_weight": 1,
+      "sell_price": 2424586,
+      "buyback_price": 2099170
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_emas",
+      "variant_label": "emas_19_karat_(790%)",
+      "variant_weight": 1,
+      "sell_price": 2309090,
+      "buyback_price": 1984765
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_emas",
+      "variant_label": "emas_18_karat_(750%)",
+      "variant_weight": 1,
+      "sell_price": 2193316,
+      "buyback_price": 1870085
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_emas",
+      "variant_label": "emas_17_karat_(701%)",
+      "variant_weight": 1,
+      "sell_price": 2077542,
+      "buyback_price": 1755405
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_emas",
+      "variant_label": "emas_16_karat_(667%)",
+      "variant_weight": 1,
+      "sell_price": 1962046,
+      "buyback_price": 1640999
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_emas",
+      "variant_label": "emas_15_karat_(625%)",
+      "variant_weight": 1,
+      "sell_price": 1846272,
+      "buyback_price": 1526319
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_emas",
+      "variant_label": "emas_14_karat_(583%)",
+      "variant_weight": 1,
+      "sell_price": 1730498,
+      "buyback_price": 1411639
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_emas",
+      "variant_label": "emas_13_karat_(542%)",
+      "variant_weight": 1,
+      "sell_price": 1614725,
+      "buyback_price": 1296959
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_emas",
+      "variant_label": "emas_12_karat_(500%)",
+      "variant_weight": 1,
+      "sell_price": 1499228,
+      "buyback_price": 1182553
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_emas",
+      "variant_label": "emas_11_karat_(458%)",
+      "variant_weight": 1,
+      "sell_price": 1383455,
+      "buyback_price": 1067873
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_emas",
+      "variant_label": "emas_10_karat_(420%)",
+      "variant_weight": 1,
+      "sell_price": 1267958,
+      "buyback_price": 953468
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_emas",
+      "variant_label": "emas_9_karat_(375%)",
+      "variant_weight": 1,
+      "sell_price": 1152185,
+      "buyback_price": 838788
+    },
+    {
+      "asset_type": "perhiasan",
+      "brand": "perhiasan_perak",
+      "variant_label": "perak",
+      "variant_weight": 1,
+      "sell_price": 51552,
+      "buyback_price": 46801
+    },
+    {
+      "asset_type": "emas",
+      "brand": "lotus_archi",
+      "variant_label": "0.1 gr",
+      "variant_weight": 0.1,
+      "sell_price": 397000,
+      "buyback_price": 285100
+    },
+    {
+      "asset_type": "emas",
+      "brand": "lotus_archi",
+      "variant_label": "0.2 gr",
+      "variant_weight": 0.2,
+      "sell_price": 732000,
+      "buyback_price": 570200
+    },
+    {
+      "asset_type": "emas",
+      "brand": "lotus_archi",
+      "variant_label": "0.5 gr",
+      "variant_weight": 0.5,
+      "sell_price": 1544000,
+      "buyback_price": 1425500
+    },
+    {
+      "asset_type": "emas",
+      "brand": "lotus_archi",
+      "variant_label": "1 gr",
+      "variant_weight": 1,
+      "sell_price": 2999000,
+      "buyback_price": 2851000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "lotus_archi",
+      "variant_label": "2 gr",
+      "variant_weight": 2,
+      "sell_price": 5924000,
+      "buyback_price": 5702000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "lotus_archi",
+      "variant_label": "5 gr",
+      "variant_weight": 5,
+      "sell_price": 14782000,
+      "buyback_price": 14255000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "lotus_archi",
+      "variant_label": "10 gr",
+      "variant_weight": 10,
+      "sell_price": 29363000,
+      "buyback_price": 28510000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "lotus_archi",
+      "variant_label": "25 gr",
+      "variant_weight": 25,
+      "sell_price": 73069000,
+      "buyback_price": 71275000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "lotus_archi",
+      "variant_label": "50 gr",
+      "variant_weight": 50,
+      "sell_price": 146109000,
+      "buyback_price": 142550000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "lotus_archi",
+      "variant_label": "100 gr",
+      "variant_weight": 100,
+      "sell_price": 292040000,
+      "buyback_price": 285100000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "galeri_24",
+      "variant_label": "0.5 gr",
+      "variant_weight": 0.5,
+      "sell_price": 1604000,
+      "buyback_price": 1434000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "galeri_24",
+      "variant_label": "1 gr",
+      "variant_weight": 1,
+      "sell_price": 3057000,
+      "buyback_price": 2868000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "galeri_24",
+      "variant_label": "2 gr",
+      "variant_weight": 2,
+      "sell_price": 6041000,
+      "buyback_price": 5736000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "galeri_24",
+      "variant_label": "5 gr",
+      "variant_weight": 5,
+      "sell_price": 14991000,
+      "buyback_price": 14341000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "galeri_24",
+      "variant_label": "10 gr",
+      "variant_weight": 10,
+      "sell_price": 29902000,
+      "buyback_price": 28682000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "galeri_24",
+      "variant_label": "25 gr",
+      "variant_weight": 25,
+      "sell_price": 74352000,
+      "buyback_price": 71354000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "galeri_24",
+      "variant_label": "50 gr",
+      "variant_weight": 50,
+      "sell_price": 148587000,
+      "buyback_price": 142708000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "galeri_24",
+      "variant_label": "100 gr",
+      "variant_weight": 100,
+      "sell_price": 297026000,
+      "buyback_price": 285417000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "galeri_24",
+      "variant_label": "250 gr",
+      "variant_weight": 250,
+      "sell_price": 740741000,
+      "buyback_price": 710029000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "galeri_24",
+      "variant_label": "500 gr",
+      "variant_weight": 500,
+      "sell_price": 1481481000,
+      "buyback_price": 1420058000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "galeri_24",
+      "variant_label": "1000 gr",
+      "variant_weight": 1000,
+      "sell_price": 2962961000,
+      "buyback_price": 2840117000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "galeri_24",
+      "variant_label": "dinar_1.06_gr",
+      "variant_weight": 1.06,
+      "sell_price": 3129000,
+      "buyback_price": 3037000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "galeri_24",
+      "variant_label": "dinar_2.13_gr",
+      "variant_weight": 2.13,
+      "sell_price": 6228000,
+      "buyback_price": 6103000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "galeri_24",
+      "variant_label": "dinar_4.25_gr",
+      "variant_weight": 4.25,
+      "sell_price": 12313000,
+      "buyback_price": 12177000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "waris_sampoerna",
+      "variant_label": "1 gr",
+      "variant_weight": 1,
+      "sell_price": 3008000,
+      "buyback_price": 2815000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "waris_sampoerna",
+      "variant_label": "2 gr",
+      "variant_weight": 2,
+      "sell_price": 5975000,
+      "buyback_price": 5630000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "waris_sampoerna",
+      "variant_label": "5 gr",
+      "variant_weight": 5,
+      "sell_price": 14878000,
+      "buyback_price": 14075000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "waris_sampoerna",
+      "variant_label": "10 gr",
+      "variant_weight": 10,
+      "sell_price": 29730000,
+      "buyback_price": 28150000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "waris_sampoerna",
+      "variant_label": "25 gr",
+      "variant_weight": 25,
+      "sell_price": 74274000,
+      "buyback_price": 70375000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "waris_sampoerna",
+      "variant_label": "50 gr",
+      "variant_weight": 50,
+      "sell_price": 148513000,
+      "buyback_price": 140750000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "waris_sampoerna",
+      "variant_label": "100 gr",
+      "variant_weight": 100,
+      "sell_price": 297008000,
+      "buyback_price": 281500000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "waris_sampoerna",
+      "variant_label": "0.5 gr",
+      "variant_weight": 0.5,
+      "sell_price": 1552000,
+      "buyback_price": 1407500
+    },
+    {
+      "asset_type": "emas",
+      "brand": "star_gold",
+      "variant_label": "0.1 gr",
+      "variant_weight": 0.1,
+      "sell_price": 393400,
+      "buyback_price": 315000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "star_gold",
+      "variant_label": "0.25 gr",
+      "variant_weight": 0.25,
+      "sell_price": 892250,
+      "buyback_price": 777000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "star_gold",
+      "variant_label": "0.5 gr",
+      "variant_weight": 0.5,
+      "sell_price": 1626300,
+      "buyback_price": 1482300
+    },
+    {
+      "asset_type": "emas",
+      "brand": "star_gold",
+      "variant_label": "1 gr",
+      "variant_weight": 1,
+      "sell_price": 2960700,
+      "buyback_price": 2807200
+    },
+    {
+      "asset_type": "emas",
+      "brand": "star_gold",
+      "variant_label": "2 gr",
+      "variant_weight": 2,
+      "sell_price": 5871400,
+      "buyback_price": 5604900
+    },
+    {
+      "asset_type": "emas",
+      "brand": "star_gold",
+      "variant_label": "3 gr",
+      "variant_weight": 3,
+      "sell_price": 8798700,
+      "buyback_price": 8416800
+    },
+    {
+      "asset_type": "emas",
+      "brand": "star_gold",
+      "variant_label": "5 gr",
+      "variant_weight": 5,
+      "sell_price": 14456000,
+      "buyback_price": 14088000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "star_gold",
+      "variant_label": "10 gr",
+      "variant_weight": 10,
+      "sell_price": 28578400,
+      "buyback_price": 27849700
+    },
+    {
+      "asset_type": "emas",
+      "brand": "star_gold",
+      "variant_label": "25 gr",
+      "variant_weight": 25,
+      "sell_price": 71029000,
+      "buyback_price": 69216400
+    },
+    {
+      "asset_type": "emas",
+      "brand": "star_gold",
+      "variant_label": "50 gr",
+      "variant_weight": 50,
+      "sell_price": 141224000,
+      "buyback_price": 137617100
+    },
+    {
+      "asset_type": "emas",
+      "brand": "star_gold",
+      "variant_label": "100 gr",
+      "variant_weight": 100,
+      "sell_price": 281892000,
+      "buyback_price": 274690400
+    },
+    {
+      "asset_type": "emas",
+      "brand": "dinar_kr",
+      "variant_label": "1/8_dinar",
+      "variant_weight": 0.53,
+      "sell_price": 1852000,
+      "buyback_price": 1667000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "dinar_kr",
+      "variant_label": "1/4_dinar",
+      "variant_weight": 1.063,
+      "sell_price": 3577000,
+      "buyback_price": 3324000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "dinar_kr",
+      "variant_label": "1/2_dinar",
+      "variant_weight": 2.125,
+      "sell_price": 7165000,
+      "buyback_price": 6700000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "dinar_kr",
+      "variant_label": "1_dinar",
+      "variant_weight": 4.25,
+      "sell_price": 14353000,
+      "buyback_price": 13493000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "dinar_kr",
+      "variant_label": "2_dinar",
+      "variant_weight": 8.5,
+      "sell_price": 28670000,
+      "buyback_price": 27036000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "dinar_kr",
+      "variant_label": "3_dinar",
+      "variant_weight": 12.75,
+      "sell_price": 43014000,
+      "buyback_price": 40606000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "dinar_kr",
+      "variant_label": "4_dinar",
+      "variant_weight": 17,
+      "sell_price": 57309000,
+      "buyback_price": 54158000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "dinar_kr",
+      "variant_label": "5_dinar",
+      "variant_weight": 21.25,
+      "sell_price": 71679000,
+      "buyback_price": 67809000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "dinar_kr",
+      "variant_label": "7_dinar",
+      "variant_weight": 29.75,
+      "sell_price": 100361000,
+      "buyback_price": 95043000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "dinar_kr",
+      "variant_label": "8_dinar",
+      "variant_weight": 34,
+      "sell_price": 114683000,
+      "buyback_price": 108720000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "dinar_kr",
+      "variant_label": "10_dinar",
+      "variant_weight": 42.5,
+      "sell_price": 143333000,
+      "buyback_price": 136024000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "dinar_kr",
+      "variant_label": "20_dinar",
+      "variant_weight": 85,
+      "sell_price": 286519000,
+      "buyback_price": 272194000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "king_halim",
+      "variant_label": "0.5 gr",
+      "variant_weight": 0.5,
+      "sell_price": 1574375,
+      "buyback_price": 1360000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "king_halim",
+      "variant_label": "1 gr",
+      "variant_weight": 1,
+      "sell_price": 2945250,
+      "buyback_price": 2720000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "king_halim",
+      "variant_label": "2 gr",
+      "variant_weight": 2,
+      "sell_price": 5802500,
+      "buyback_price": 5440000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "king_halim",
+      "variant_label": "5 gr",
+      "variant_weight": 5,
+      "sell_price": 14451250,
+      "buyback_price": 13600000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "king_halim",
+      "variant_label": "10 gr",
+      "variant_weight": 10,
+      "sell_price": 28710000,
+      "buyback_price": 27200000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "king_halim",
+      "variant_label": "25 gr",
+      "variant_weight": 25,
+      "sell_price": 71637500,
+      "buyback_price": 68000000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "king_halim",
+      "variant_label": "50 gr",
+      "variant_weight": 50,
+      "sell_price": 143137500,
+      "buyback_price": 136000000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "king_halim",
+      "variant_label": "100 gr",
+      "variant_weight": 100,
+      "sell_price": 286000000,
+      "buyback_price": 272000000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "0.1 gr",
+      "variant_weight": 0.1,
+      "sell_price": 373500,
+      "buyback_price": 280300
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "0.25 gr",
+      "variant_weight": 0.25,
+      "sell_price": 875000,
+      "buyback_price": 700750
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "0.5 gr",
+      "variant_weight": 0.5,
+      "sell_price": 1536500,
+      "buyback_price": 1401500
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "1 gr",
+      "variant_weight": 1,
+      "sell_price": 2963000,
+      "buyback_price": 2803000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "2 gr",
+      "variant_weight": 2,
+      "sell_price": 5886000,
+      "buyback_price": 5606000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "5 gr",
+      "variant_weight": 5,
+      "sell_price": 14635000,
+      "buyback_price": 14015000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "10 gr",
+      "variant_weight": 10,
+      "sell_price": 29220000,
+      "buyback_price": 28030000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "25 gr",
+      "variant_weight": 25,
+      "sell_price": 72950000,
+      "buyback_price": 70075000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "50 gr",
+      "variant_weight": 50,
+      "sell_price": 145850000,
+      "buyback_price": 140150000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "100 gr",
+      "variant_weight": 100,
+      "sell_price": 291600000,
+      "buyback_price": 280300000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "125 gr",
+      "variant_weight": 125,
+      "sell_price": 364250000,
+      "buyback_price": 347312500
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "150 gr",
+      "variant_weight": 150,
+      "sell_price": 436950000,
+      "buyback_price": 416775000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "175 gr",
+      "variant_weight": 175,
+      "sell_price": 509600000,
+      "buyback_price": 486237500
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "200 gr",
+      "variant_weight": 200,
+      "sell_price": 582200000,
+      "buyback_price": 555700000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "250 gr",
+      "variant_weight": 250,
+      "sell_price": 722250000,
+      "buyback_price": 687000000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "500 gr",
+      "variant_weight": 500,
+      "sell_price": 1444500000,
+      "buyback_price": 1374000000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "emasku",
+      "variant_label": "1000 gr",
+      "variant_weight": 1000,
+      "sell_price": 2889000000,
+      "buyback_price": 2748000000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "indogold",
+      "variant_label": "perak_indogold_batik_25gr",
+      "variant_weight": 25,
+      "sell_price": 2500000,
+      "buyback_price": 1375000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "indogold",
+      "variant_label": "perak_indogold_batik_50gr",
+      "variant_weight": 50,
+      "sell_price": 4950000,
+      "buyback_price": 2750000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "indogold",
+      "variant_label": "perak_indogold_batik_100gr",
+      "variant_weight": 100,
+      "sell_price": 9700000,
+      "buyback_price": 5500000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "indogold",
+      "variant_label": "perak_indogold_10gr",
+      "variant_weight": 10,
+      "sell_price": 1075000,
+      "buyback_price": 540000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "indogold",
+      "variant_label": "perak_indogold_100gr",
+      "variant_weight": 100,
+      "sell_price": 9550000,
+      "buyback_price": 5400000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "indogold",
+      "variant_label": "perak_indogold_500gr",
+      "variant_weight": 500,
+      "sell_price": 46250000,
+      "buyback_price": 27000000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "indogold",
+      "variant_label": "perak_indogold_1000gr",
+      "variant_weight": 1000,
+      "sell_price": 89000000,
+      "buyback_price": 54000000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "indogold",
+      "variant_label": "perak_imlek_indogold_500gr",
+      "variant_weight": 500,
+      "sell_price": 49250000,
+      "buyback_price": 27000000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "indogold",
+      "variant_label": "perak_imlek_indogold_1000gr",
+      "variant_weight": 1000,
+      "sell_price": 95000000,
+      "buyback_price": 54000000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "silverium",
+      "variant_label": "3.3 gr",
+      "variant_weight": 3.3,
+      "sell_price": 254646,
+      "buyback_price": 187110
+    },
+    {
+      "asset_type": "perak",
+      "brand": "silverium",
+      "variant_label": "9.9 gr",
+      "variant_weight": 9.9,
+      "sell_price": 746645,
+      "buyback_price": 561330
+    },
+    {
+      "asset_type": "perak",
+      "brand": "silverium",
+      "variant_label": "33 gr",
+      "variant_weight": 33,
+      "sell_price": 2413845,
+      "buyback_price": 1871100
+    },
+    {
+      "asset_type": "perak",
+      "brand": "silverium",
+      "variant_label": "50 gr",
+      "variant_weight": 50,
+      "sell_price": 3759000,
+      "buyback_price": 2835000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "silverium",
+      "variant_label": "80 gr",
+      "variant_weight": 80,
+      "sell_price": 6119400,
+      "buyback_price": 4536000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "silverium",
+      "variant_label": "99 gr",
+      "variant_weight": 99,
+      "sell_price": 7258860,
+      "buyback_price": 5613300
+    },
+    {
+      "asset_type": "perak",
+      "brand": "silverium",
+      "variant_label": "250 gr",
+      "variant_weight": 250,
+      "sell_price": 18256875,
+      "buyback_price": 14175000
+    },
+    {
+      "asset_type": "perak",
+      "brand": "silverium",
+      "variant_label": "500 gr",
+      "variant_weight": 500,
+      "sell_price": 36067500,
+      "buyback_price": 28350000
+    },
+    {
+      "asset_type": "emas",
+      "brand": "harga_umum",
+      "variant_label": "1 gr",
+      "variant_weight": 1,
+      "sell_price": 2947000,
+      "buyback_price": 2741000
+    }
+  ]
+}
