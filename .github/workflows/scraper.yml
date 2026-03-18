@@ -1,0 +1,45 @@
+name: Assetify Scraper
+
+on:
+  schedule:
+    # Jalan setiap 1 jam (menit ke-0)
+    - cron: "0 * * * *"
+  # Bisa juga dijalankan manual dari GitHub
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   # izin commit prices.json ke repo ini
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run all scrapers + export prices.json
+        env:
+          SUPABASE_URL:             ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          TELEGRAM_BOT_TOKEN:       ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:         ${{ secrets.TELEGRAM_CHAT_ID }}
+          GITHUB_TOKEN:             ${{ secrets.GITHUB_TOKEN }}
+        run: node run-all-scraper.js
+
+      - name: Commit prices.json jika ada perubahan
+        run: |
+          git config user.name  "assetify-bot"
+          git config user.email "bot@assetify.id"
+          git add prices.json
+          # Hanya commit jika ada perubahan
+          git diff --staged --quiet || git commit -m "chore: update prices.json [skip ci]"
+          git push

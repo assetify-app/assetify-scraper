@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; font-size: 14px; }
+  .topbar { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 10px 20px;
+            display: flex; align-items: center; justify-content: space-between; }
+  .topbar .brand { font-weight: 700; font-size: 18px; color: #111; letter-spacing: -.3px; }
+  .topbar .brand span { color: #5F76E8; }
+  .stat-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px;
+               padding: 14px 18px; }
+  .stat-card .label { font-size: 12px; color: #6b7280; margin-bottom: 4px; }
+  .stat-card .value { font-size: 20px; font-weight: 600; color: #111; }
+  .stat-card .value.up   { color: #16a34a; }
+  .stat-card .value.down { color: #dc2626; }
+  .main { padding: 16px 20px; }
+  .card-box { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; }
+  .card-box .card-head { padding: 14px 18px; border-bottom: 1px solid #f1f3f5;
+                         display: flex; align-items: center; justify-content: space-between; }
+  .card-box .card-head h6 { margin: 0; font-weight: 600; font-size: 15px; }
+  table { font-size: 13px; }
+  th { font-weight: 600; color: #374151; background: #f9fafb !important; white-space: nowrap; }
+  td { vertical-align: middle; white-space: nowrap; }
+  .badge-type { font-size: 11px; padding: 2px 8px; border-radius: 20px; font-weight: 500; }
+  .badge-emas      { background: #fef3c7; color: #92400e; }
+  .badge-perak     { background: #f1f5f9; color: #334155; }
+  .badge-perhiasan { background: #fce7f3; color: #831843; }
+  .btn-action { border: none; background: none; padding: 3px 8px; border-radius: 6px;
+                display: inline-flex; align-items: center; gap: 5px; font-size: 12px;
+                cursor: pointer; transition: background .15s; }
+  .btn-action:hover { background: #f3f4f6; }
+  .btn-action.edit  { color: #5F76E8; }
+  .btn-action.del   { color: #ef4444; }
+  .spinner-wrap { text-align: center; padding: 40px; color: #6b7280; }
+  .modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45);
+                   z-index:1000; align-items:center; justify-content:center; }
+  .modal-overlay.show { display:flex; }
+  .modal-box { background:#fff; border-radius:12px; width:480px; max-height:90vh;
+               overflow-y:auto; box-shadow:0 20px 60px rgba(0,0,0,.2); }
+  .modal-box .mhead { padding:16px 20px; border-bottom:1px solid #e5e7eb;
+                      display:flex; align-items:center; justify-content:space-between; }
+  .modal-box .mhead h6 { margin:0; font-weight:600; font-size:15px; }
+  .modal-box .mbody { padding:20px; }
+  .modal-box .mfoot { padding:12px 20px; border-top:1px solid #e5e7eb;
+                      display:flex; justify-content:flex-end; gap:8px; }
+  .type-pill { border:1.5px solid #e5e7eb; border-radius:8px; padding:6px 14px;
+               cursor:pointer; font-size:13px; transition:all .15s; user-select:none; }
+  .type-pill.active { border-color:#5F76E8; background:#5F76E8; color:#fff; }
+  .err-toast { position:fixed; bottom:20px; right:20px; background:#ef4444; color:#fff;
+               padding:10px 18px; border-radius:8px; font-size:13px; z-index:2000;
+               display:none; }
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="brand">Asset<span>ify</span></div>
+  <div id="lastUpdate" style="font-size:12px;color:#9ca3af;"></div>
+</div>
+
+<!-- Stats -->
+<div class="main">
+  <div class="row g-3 mb-3" id="statsRow">
+    <div class="col-6 col-md-3">
+      <div class="stat-card"><div class="label">Total Modal</div>
+        <div class="value" id="sModal">—</div></div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="stat-card"><div class="label">Total Keuntungan</div>
+        <div class="value" id="sProfit">—</div></div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="stat-card"><div class="label">Total Gramasi</div>
+        <div class="value" id="sGram">—</div></div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="stat-card"><div class="label">Jumlah Aset</div>
+        <div class="value" id="sCount">—</div></div>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="card-box">
+    <div class="card-head">
+      <h6>Aset Saya</h6>
+      <button class="btn btn-sm btn-primary px-3" onclick="openModal()">+ Tambah Aset</button>
+    </div>
+    <div class="p-0">
+      <div id="tableWrap">
+        <div class="spinner-wrap">
+          <div class="spinner-border spinner-border-sm text-primary me-2"></div>
+          Memuat data...
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- /main -->
+
+<!-- ===== MODAL TAMBAH / UBAH ===== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="mhead">
+      <h6 id="modalTitle">Tambah Aset</h6>
+      <button class="btn-close btn-sm" onclick="closeModal()"></button>
+    </div>
+    <div class="mbody">
+
+      <!-- Tanggal -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Tanggal Pembelian</label>
+        <input type="date" class="form-control" id="fDate" max="">
+      </div>
+
+      <!-- Tipe -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Tipe Aset</label>
+        <div class="d-flex gap-2 flex-wrap">
+          <div class="type-pill active" data-type="emas"      onclick="setType('emas')">Emas Batangan</div>
+          <div class="type-pill"        data-type="perak"     onclick="setType('perak')">Perak Batangan</div>
+          <div class="type-pill"        data-type="perhiasan" onclick="setType('perhiasan')">Perhiasan</div>
+        </div>
+      </div>
+
+      <!-- Brand -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Brand</label>
+        <select class="form-select" id="fBrand" onchange="onBrandChange()"></select>
+      </div>
+
+      <!-- Varian (non-Umum) -->
+      <div class="mb-3" id="variantRow" style="display:none">
+        <label class="form-label fw-semibold">Varian</label>
+        <select class="form-select" id="fVariant" onchange="onVariantChange()">
+          <option value="">— Pilih Varian —</option>
+        </select>
+      </div>
+
+      <!-- Gramasi manual (Umum) -->
+      <div class="mb-3" id="gramRow">
+        <label class="form-label fw-semibold">Gramasi</label>
+        <div class="input-group">
+          <input type="number" class="form-control" id="fGram" placeholder="0" min="0" step="0.01">
+          <span class="input-group-text">gram</span>
+        </div>
+      </div>
+
+      <!-- Harga beli -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Harga Pembelian</label>
+        <div class="input-group">
+          <span class="input-group-text">Rp</span>
+          <input type="number" class="form-control" id="fPrice" placeholder="0" min="0">
+        </div>
+      </div>
+
+      <!-- Harga referensi (readonly, muncul jika ada varian) -->
+      <div class="mb-2" id="priceHintRow" style="display:none">
+        <div class="p-2 rounded" style="background:#f0fdf4;border:1px solid #bbf7d0;font-size:12px;color:#166534">
+          <span id="priceHintText"></span>
+        </div>
+      </div>
+
+    </div>
+    <div class="mfoot">
+      <button class="btn btn-secondary btn-sm px-4" onclick="closeModal()">Batal</button>
+      <button class="btn btn-primary btn-sm px-4" id="btnSave" onclick="saveAsset()">Simpan</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL KONFIRMASI HAPUS ===== -->
+<div class="modal-overlay" id="deleteOverlay">
+  <div class="modal-box" style="width:340px">
+    <div class="mhead"><h6>Hapus Aset</h6></div>
+    <div class="mbody text-center py-2">
+      <p class="mb-0">Yakin ingin menghapus aset ini?</p>
+    </div>
+    <div class="mfoot justify-content-center">
+      <button class="btn btn-secondary btn-sm px-4" onclick="closeDelete()">Batal</button>
+      <button class="btn btn-danger btn-sm px-4" id="btnDelete" onclick="confirmDelete()">Hapus</button>
+    </div>
+  </div>
+</div>
+
+<div class="err-toast" id="errToast"></div>
+
+<script>
+// ── Constants (mirror dari Next.js app) ──────────────────────
+const BRAND_BY_TYPE = {
+  emas:      ['Umum','Antam','UBS','Lotus Archi','Galeri 24','Dinar KR','Waris Sampoerna','Star Gold','Emasku','King Halim'],
+  perak:     ['Umum','Silvergram','Silverium','Indogold','Lotus Archi'],
+  perhiasan: ['Umum']
+};
+const BRAND_SLUG = {
+  'Umum':'umum','Antam':'antam','UBS':'ubs','Lotus Archi':'lotus_archi',
+  'Galeri 24':'galeri_24','Dinar KR':'dinar_kr','Waris Sampoerna':'waris',
+  'Star Gold':'stargold','Emasku':'emasku','King Halim':'kinghalim',
+  'Silvergram':'silvergram','Silverium':'silverium','Indogold':'indogold'
+};
+const SLUG_BRAND = Object.fromEntries(Object.entries(BRAND_SLUG).map(([k,v])=>[v,k]));
+const TYPE_LABEL = { emas:'Emas Batangan', perak:'Perak Batangan', perhiasan:'Perhiasan' };
+
+// ── State ────────────────────────────────────────────────────
+let allPrices = [];
+let assets    = [];
+let editId    = null;
+let deleteId  = null;
+let curType   = 'emas';
+
+// ── Init ─────────────────────────────────────────────────────
+window.onload = function() {
+  document.getElementById('fDate').max = new Date().toISOString().split('T')[0];
+  loadAll();
+};
+
+function loadAll() {
+  showTableLoading();
+  google.script.run
+    .withSuccessHandler(function(prices) {
+      allPrices = prices;
+      document.getElementById('lastUpdate').textContent =
+        'Harga diperbarui: ' + new Date().toLocaleString('id-ID');
+      google.script.run
+        .withSuccessHandler(function(rows) {
+          assets = rows.map(normalizeAsset);
+          renderTable();
+          renderStats();
+        })
+        .withFailureHandler(showErr)
+        .getAssets();
+    })
+    .withFailureHandler(function(e) {
+      showErr(e);
+      // Tetap load aset meski harga gagal
+      google.script.run
+        .withSuccessHandler(function(rows) {
+          assets = rows.map(normalizeAsset);
+          renderTable();
+          renderStats();
+        })
+        .withFailureHandler(showErr)
+        .getAssets();
+    })
+    .getPrices();
+}
+
+function normalizeAsset(a) {
+  return {
+    id:             String(a.id),
+    asset_type:     a.asset_type,
+    brand:          a.brand,
+    variant_label:  a.variant_label  || '',
+    variant_weight: a.variant_weight !== '' ? parseFloat(a.variant_weight) : null,
+    buy_price:      parseFloat(a.buy_price) || 0,
+    bought_at:      a.bought_at      || '',
+    proof_url:      a.proof_url      || '',
+    created_at:     a.created_at     || ''
+  };
+}
+
+// ── Lookup buyback ───────────────────────────────────────────
+function lookupBuyback(asset) {
+  if (asset.brand === 'umum') return null;
+  const match = allPrices.find(p =>
+    p.asset_type === asset.asset_type &&
+    p.brand === asset.brand &&
+    p.variant_label === asset.variant_label
+  );
+  return match ? match.buyback_price : null;
+}
+
+// ── Format helpers ───────────────────────────────────────────
+function rp(n) {
+  if (n === null || n === undefined) return '—';
+  return 'Rp ' + Math.round(n).toLocaleString('id-ID');
+}
+
+function getVariantLabel(a) {
+  if (a.brand === 'dinar_kr') {
+    const parts = (a.variant_label || '').split('_');
+    return `${parts[0]} Dinar (${a.variant_weight} gr)`;
+  }
+  if (a.brand === 'antam' && (a.variant_label || '').includes('_')) {
+    const parts = (a.variant_label || '').split('_');
+    return `${parts[0].charAt(0).toUpperCase()+parts[0].slice(1)} ${a.variant_weight} gr`;
+  }
+  return a.variant_weight ? `${a.variant_weight} gr` : (a.variant_label || '—');
+}
+
+function getBrandName(slug) { return SLUG_BRAND[slug] || slug; }
+
+// ── Render stats ─────────────────────────────────────────────
+function renderStats() {
+  const modal  = assets.reduce((s,a) => s + (a.buy_price||0), 0);
+  const gram   = assets.reduce((s,a) => s + (a.variant_weight||0), 0);
+  let   profit = 0;
+  assets.forEach(a => {
+    const bb = lookupBuyback(a);
+    if (bb !== null) profit += (bb - a.buy_price);
+  });
+
+  document.getElementById('sModal').textContent  = rp(modal);
+  document.getElementById('sGram').textContent   = gram.toFixed(2) + ' gr';
+  document.getElementById('sCount').textContent  = assets.length + ' aset';
+
+  const el = document.getElementById('sProfit');
+  el.textContent = (profit > 0 ? '▲ ' : profit < 0 ? '▼ ' : '') + rp(Math.abs(profit));
+  el.className = 'value' + (profit > 0 ? ' up' : profit < 0 ? ' down' : '');
+}
+
+// ── Render table ─────────────────────────────────────────────
+function showTableLoading() {
+  document.getElementById('tableWrap').innerHTML =
+    '<div class="spinner-wrap"><div class="spinner-border spinner-border-sm text-primary me-2"></div>Memuat data...</div>';
+}
+
+function renderTable() {
+  const wrap = document.getElementById('tableWrap');
+  if (assets.length === 0) {
+    wrap.innerHTML = '<div class="spinner-wrap text-muted">Belum ada aset. Klik "+ Tambah Aset" untuk mulai.</div>';
+    return;
+  }
+
+  let rows = '';
+  assets.forEach((a, i) => {
+    const bb     = lookupBuyback(a);
+    const profit = bb !== null ? (bb - a.buy_price) : null;
+    const pText  = profit !== null
+      ? `<span class="${profit>0?'text-success':profit<0?'text-danger':'text-secondary'}">${profit>0?'▲':profit<0?'▼':'➔'} ${rp(Math.abs(profit))}</span>`
+      : '<span class="text-muted">—</span>';
+    const bbText = bb !== null ? rp(bb) : '<span class="text-muted">—</span>';
+    const tBadge = `badge-${a.asset_type}`;
+    const date   = a.bought_at ? new Date(a.bought_at).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'}) : '—';
+    rows += `
+      <tr>
+        <td class="text-muted ps-3">${i+1}</td>
+        <td>
+          <div class="fw-semibold">${getBrandName(a.brand)}</div>
+          <span class="badge-type ${tBadge}">${TYPE_LABEL[a.asset_type]||a.asset_type}</span>
+        </td>
+        <td>${getVariantLabel(a)}</td>
+        <td>${rp(a.buy_price)}</td>
+        <td>${bbText}</td>
+        <td>${pText}</td>
+        <td>${date}</td>
+        <td>
+          <button class="btn-action edit" onclick="openEdit('${a.id}')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            Ubah
+          </button>
+          <button class="btn-action del" onclick="askDelete('${a.id}')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+            Hapus
+          </button>
+        </td>
+      </tr>`;
+  });
+
+  wrap.innerHTML = `
+    <div class="table-responsive">
+      <table class="table table-hover mb-0">
+        <thead>
+          <tr>
+            <th class="ps-3" style="width:40px">No.</th>
+            <th>Nama Aset</th><th>Varian</th>
+            <th>Harga Beli</th><th>Harga Buyback</th>
+            <th>Keuntungan</th><th>Tgl Beli</th><th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
+
+// ── Modal open/close ─────────────────────────────────────────
+function openModal(id) {
+  editId = id || null;
+  document.getElementById('modalTitle').textContent = id ? 'Ubah Aset' : 'Tambah Aset';
+  document.getElementById('btnSave').textContent    = id ? 'Simpan Perubahan' : 'Tambah Aset';
+
+  if (id) {
+    const a = assets.find(x => x.id === id);
+    setType(a.asset_type, false);
+    document.getElementById('fDate').value = a.bought_at ? a.bought_at.split('T')[0] : '';
+    populateBrands(a.asset_type);
+    document.getElementById('fBrand').value = getBrandName(a.brand) || 'Umum';
+    onBrandChange(a.variant_label, a.variant_weight, a.buy_price);
+  } else {
+    setType('emas', false);
+    document.getElementById('fDate').value  = new Date().toISOString().split('T')[0];
+    document.getElementById('fPrice').value = '';
+    document.getElementById('fGram').value  = '';
+    populateBrands('emas');
+    onBrandChange();
+  }
+  document.getElementById('modalOverlay').classList.add('show');
+}
+
+function openEdit(id) { openModal(id); }
+function closeModal() { document.getElementById('modalOverlay').classList.remove('show'); editId = null; }
+
+// ── Type / Brand / Variant logic ─────────────────────────────
+function setType(type, resetBrand) {
+  curType = type;
+  document.querySelectorAll('.type-pill').forEach(el => {
+    el.classList.toggle('active', el.dataset.type === type);
+  });
+  populateBrands(type);
+  if (resetBrand !== false) {
+    document.getElementById('fBrand').value = 'Umum';
+    onBrandChange();
+  }
+}
+
+function populateBrands(type) {
+  const sel    = document.getElementById('fBrand');
+  const brands = BRAND_BY_TYPE[type] || ['Umum'];
+  sel.innerHTML = brands.map(b => `<option>${b}</option>`).join('');
+}
+
+function onBrandChange(preVariant, preGram, prePrice) {
+  const brand  = document.getElementById('fBrand').value;
+  const slug   = BRAND_SLUG[brand] || 'umum';
+  const isUmum = brand === 'Umum';
+
+  document.getElementById('gramRow').style.display    = isUmum ? '' : 'none';
+  document.getElementById('variantRow').style.display = isUmum ? 'none' : '';
+  document.getElementById('priceHintRow').style.display = 'none';
+
+  if (!isUmum) {
+    const opts = allPrices.filter(p => p.asset_type === curType && p.brand === slug);
+    const sel  = document.getElementById('fVariant');
+    sel.innerHTML = '<option value="">— Pilih Varian —</option>' +
+      opts.map(p => {
+        const label = p.variant_weight ? `${p.variant_weight} gr` : p.variant_label;
+        return `<option value="${p.variant_label}"
+                  data-weight="${p.variant_weight||''}"
+                  data-sell="${p.sell_price||0}"
+                  data-bb="${p.buyback_price||0}">${label} — Jual: ${rp(p.sell_price)} | BB: ${rp(p.buyback_price)}</option>`;
+      }).join('');
+
+    if (preVariant) {
+      sel.value = preVariant;
+      onVariantChange(prePrice);
+    }
+  } else if (preGram) {
+    document.getElementById('fGram').value  = preGram;
+    document.getElementById('fPrice').value = prePrice || '';
+  }
+}
+
+function onVariantChange(prePrice) {
+  const sel  = document.getElementById('fVariant');
+  const opt  = sel.options[sel.selectedIndex];
+  const hint = document.getElementById('priceHintRow');
+  if (!opt || !opt.value) { hint.style.display = 'none'; return; }
+  const sell = parseInt(opt.dataset.sell)||0;
+  const bb   = parseInt(opt.dataset.bb)||0;
+  document.getElementById('priceHintText').textContent =
+    `Harga Jual: ${rp(sell)}  •  Buyback: ${rp(bb)}`;
+  hint.style.display = '';
+  if (!prePrice && sell) document.getElementById('fPrice').value = sell;
+}
+
+// ── Save ─────────────────────────────────────────────────────
+function saveAsset() {
+  const brand     = document.getElementById('fBrand').value;
+  const slug      = BRAND_SLUG[brand] || 'umum';
+  const isUmum    = brand === 'Umum';
+  const varSel    = document.getElementById('fVariant');
+  const varLabel  = isUmum ? '' : (varSel.value || '');
+  const varOpt    = !isUmum ? varSel.options[varSel.selectedIndex] : null;
+  const weight    = isUmum
+    ? (parseFloat(document.getElementById('fGram').value)||null)
+    : (varOpt ? (parseFloat(varOpt.dataset.weight)||null) : null);
+  const buyPrice  = parseInt(document.getElementById('fPrice').value)||0;
+  const boughtAt  = document.getElementById('fDate').value;
+
+  if (!boughtAt) { showErr('Tanggal pembelian wajib diisi'); return; }
+  if (!buyPrice)  { showErr('Harga pembelian wajib diisi');  return; }
+
+  const payload = {
+    asset_type:     curType,
+    brand:          slug,
+    variant_label:  varLabel,
+    variant_weight: weight,
+    buy_price:      buyPrice,
+    bought_at:      boughtAt,
+    proof_url:      ''
+  };
+
+  const btn = document.getElementById('btnSave');
+  btn.disabled = true;
+  btn.textContent = 'Menyimpan...';
+
+  if (editId) {
+    payload.id = editId;
+    google.script.run
+      .withSuccessHandler(function() {
+        closeModal();
+        loadAll();
+      })
+      .withFailureHandler(function(e) { btn.disabled=false; btn.textContent='Simpan Perubahan'; showErr(e); })
+      .updateAsset(payload);
+  } else {
+    google.script.run
+      .withSuccessHandler(function() {
+        closeModal();
+        loadAll();
+      })
+      .withFailureHandler(function(e) { btn.disabled=false; btn.textContent='Tambah Aset'; showErr(e); })
+      .saveAsset(payload);
+  }
+}
+
+// ── Delete ───────────────────────────────────────────────────
+function askDelete(id) {
+  deleteId = id;
+  document.getElementById('deleteOverlay').classList.add('show');
+}
+function closeDelete() {
+  document.getElementById('deleteOverlay').classList.remove('show');
+  deleteId = null;
+}
+function confirmDelete() {
+  if (!deleteId) return;
+  const btn = document.getElementById('btnDelete');
+  btn.disabled = true;
+  google.script.run
+    .withSuccessHandler(function() {
+      closeDelete();
+      loadAll();
+    })
+    .withFailureHandler(function(e) { btn.disabled=false; showErr(e); })
+    .deleteAsset(deleteId);
+}
+
+// ── Error toast ──────────────────────────────────────────────
+function showErr(e) {
+  const msg = typeof e === 'string' ? e : (e.message || 'Terjadi kesalahan');
+  const t   = document.getElementById('errToast');
+  t.textContent    = msg;
+  t.style.display  = 'block';
+  setTimeout(()=>{ t.style.display='none'; }, 4000);
+}
+</script>
+</body>
+</html>
